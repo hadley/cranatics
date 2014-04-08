@@ -19,3 +19,6 @@ all$wday <- wday(all$date, label = TRUE)
 all <- tbl_df(all)
 
 saveRDS(all, "cranatics.rds")
+
+unlink("current.rds")
+unlink("archive.rds")
