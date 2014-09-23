@@ -10,7 +10,7 @@ current <- readRDS("current.rds")
 archive <- readRDS("archive.rds")
 
 all <- rbind(rbind_all(archive), current)
-all$mtime <- as.POSIXct(strptime(all$mtime, "%Y-%m-%d %H:%M:%S"))
+all$mtime <- as.POSIXct(strptime(all$mtime, "%Y-%m-%d %H:%M:%S", tz = "UTC"))
 all$hour <- hour(all$mtime)
 all$date <- as.Date(all$mtime)
 all$week <- floor_date(all$date, "week")
